@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1314">
+  <meta name="description" content="芝麻糊的个人主页。访问我的哔哩哔哩空间和 GitHub 开源项目。">
+  <link rel="canonical" href="https://zhimahu8848.com/">
+  <title>芝麻糊 · 个人主页</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --background: #0b1314;
+      --ink: #f4f8ed;
+      --muted: #aebdb5;
+      --accent: #b8f795;
+      --line: #2d3d37;
+      --surface: #14211e;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-width: 0;
+      min-height: 100svh;
+      background: radial-gradient(ellipse at 83% 11%, #162c27 0, transparent 49%), var(--background);
+      color: var(--ink);
+    }
+
+    .page {
+      width: min(100% - 3rem, 72rem);
+      margin-inline: auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding-block: 1.65rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mark {
+      display: grid;
+      width: 2.35rem;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid #d1ffb5;
+      border-radius: .65rem;
+      background: var(--accent);
+      color: #102017;
+      font: 800 1.1rem/1 system-ui, sans-serif;
+    }
+
+    .domain {
+      color: #d5e3d8;
+      font: 600 .89rem/1.4 ui-monospace, Consolas, monospace;
+      letter-spacing: .035em;
+    }
+
+    main {
+      display: grid;
+      min-height: min(40rem, calc(100svh - 5.7rem));
+      grid-template-columns: 1.12fr .88fr;
+      align-items: center;
+      column-gap: clamp(2rem, 5vw, 4.65rem);
+      padding-block: clamp(3.25rem, 8vw, 7rem);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.75rem, 7.7vw, 7.15rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.055em;
+    }
+
+    .intro {
+      max-width: 28rem;
+      margin: 1.25rem 0 2.35rem;
+      color: var(--muted);
+      font-size: clamp(1.0625rem, 1.85vw, 1.3rem);
+      letter-spacing: .03em;
+      line-height: 1.65;
+    }
+
+    .profiles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      min-width: 0;
+      min-height: 4.75rem;
+      padding: .7rem .8rem;
+      border: 1px solid #334942;
+      border-radius: .8rem;
+      background: var(--surface);
+      color: var(--ink);
+      text-decoration: none;
+      transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .profile:hover {
+      transform: translateY(-2px);
+      border-color: #85bf6c;
+      background: #1c3129;
+    }
+
+    .profile:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .profile-bili {
+      border-color: #759a62;
+      background: #1e3024;
+    }
+
+    .profile-icon {
+      display: grid;
+      flex: 0 0 2.35rem;
+      width: 2.35rem;
+      aspect-ratio: 1;
+      place-items: center;
+      border-radius: .55rem;
+      background: #293b35;
+      color: #e4efe7;
+      font: 700 .9rem/1 system-ui, sans-serif;
+    }
+
+    .profile-bili .profile-icon {
+      background: var(--accent);
+      color: #16271b;
+      font-size: 1.08rem;
+    }
+
+    .profile-name {
+      display: block;
+      font-size: 1rem;
+      font-weight: 750;
+      line-height: 1.35;
+    }
+
+    .profile-handle {
+      display: block;
+      margin-top: .18rem;
+      color: var(--muted);
+      font-size: .875rem;
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+    }
+
+    .art {
+      position: relative;
+      display: grid;
+      overflow: hidden;
+      isolation: isolate;
+      width: 100%;
+      aspect-ratio: 1.03;
+      place-items: center;
+      border: 1px solid #334b42;
+      border-radius: 1.3rem;
+      background:
+        radial-gradient(ellipse at 53% 45%, #315944, #142b23 44%, #0e1917 76%);
+    }
+
+    .art::before {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(#a3d0a11b 1px, transparent 1px),
+        linear-gradient(90deg, #a3d0a11b 1px, transparent 1px);
+      background-size: 1.6rem 1.6rem;
+      mask-image: radial-gradient(ellipse at 52% 48%, black 10%, transparent 81%);
+      content: "";
+    }
+
+    .art::after {
+      position: absolute;
+      z-index: -1;
+      bottom: 13%;
+      left: 23%;
+      width: 58%;
+      height: 19%;
+      border-radius: 50%;
+      background: #060e0c;
+      filter: blur(19px);
+      opacity: .85;
+      content: "";
+    }
+
+    .cube {
+      position: relative;
+      width: 76%;
+      aspect-ratio: 1;
+      transform: translateY(-4%);
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+    }
+
+    .face::after {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(var(--angle-one), transparent 0 2.4rem, #12392940 2.4rem calc(2.4rem + 1px)),
+        repeating-linear-gradient(var(--angle-two), transparent 0 2.4rem, #12392940 2.4rem calc(2.4rem + 1px));
+      content: "";
+    }
+
+    .top {
+      --angle-one: 29deg;
+      --angle-two: 151deg;
+      clip-path: polygon(50% 7%, 94% 30%, 50% 56%, 6% 30%);
+      background: linear-gradient(139deg, #e9ffbb 0%, #adf38b 49%, #6ac479 88%);
+    }
+
+    .left {
+      --angle-one: 90deg;
+      --angle-two: 31deg;
+      clip-path: polygon(6% 30%, 50% 56%, 50% 96%, 6% 69%);
+      background: linear-gradient(140deg, #77d988, #4aab6d 51%, #257b57 84%);
+    }
+
+    .right {
+      --angle-one: 90deg;
+      --angle-two: 150deg;
+      clip-path: polygon(50% 56%, 94% 30%, 94% 69%, 50% 96%);
+      background: linear-gradient(135deg, #63bc75, #1c6d50 67%, #154836);
+    }
+
+    .glint {
+      position: absolute;
+      inset: 0;
+      background: #e2ffbd;
+      opacity: .52;
+      clip-path: polygon(50% 54.8%, 93.6% 29.75%, 94% 30.3%, 50.25% 56.25%, 50.25% 95.8%, 49.65% 96%, 49.65% 56.2%, 5.8% 30.3%, 6.1% 29.75%);
+    }
+
+    @media (max-width: 860px) {
+      main { column-gap: 1.35rem; }
+      .profile { gap: .6rem; padding-inline: .65rem; }
+    }
+
+    @media (max-width: 700px) {
+      .page { width: min(100% - 2rem, 36rem); }
+      header { padding-block: 1.15rem; }
+      main {
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 2rem;
+        padding-block: 2.7rem;
+      }
+      h1 { font-size: clamp(3.25rem, 13vw, 5.2rem); }
+      .intro { margin-block: .95rem 1.55rem; }
+      .art { aspect-ratio: 1.42; }
+      .cube { width: 58%; }
+    }
+
+    @media (max-width: 365px) {
+      .profiles { grid-template-columns: minmax(0, 1fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile { transition: none; }
+      .profile:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <span class="mark" aria-hidden="true">Z</span>
+      <span class="domain">zhimahu8848.com</span>
+    </header>
+    <main>
+      <section aria-labelledby="name">
+        <h1 id="name">芝麻糊</h1>
+        <p class="intro">Minecraft 模组与开源项目</p>
+        <nav class="profiles" aria-label="我的主页">
+          <a class="profile profile-bili" href="https://space.bilibili.com/168590802">
+            <span class="profile-icon" aria-hidden="true">哔</span>
+            <span>
+              <span class="profile-name">哔哩哔哩</span>
+              <span class="profile-handle">黑今之马户</span>
+            </span>
+          </a>
+          <a class="profile" href="https://github.com/Zhi-Ma-Hu-8848">
+            <span class="profile-icon" aria-hidden="true">GH</span>
+            <span>
+              <span class="profile-name">GitHub</span>
+              <span class="profile-handle">Zhi-Ma-Hu-8848</span>
+            </span>
+          </a>
+        </nav>
+      </section>
+      <div class="art" aria-hidden="true">
+        <div class="cube">
+          <span class="face top"></span>
+          <span class="face left"></span>
+          <span class="face right"></span>
+          <span class="glint"></span>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
